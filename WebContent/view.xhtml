@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"	
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:sp="https://myspan.com/facelets">
+	
+	<h:head>
+		<style type="text/css">
+	        .colPanGrid {
+				text-align: left;
+			}
+			
+	   	</style>
+	   	
+	   
+	</h:head>
+<h:body >
+	<h:form id="myForm1" enctype="multipart/form-data">
+	<h:outputStylesheet library="css" name="grid.css"  />
+	<p:growl id="growl" life="6000" />
+    <p:panel id="panel" header="Registro de usuario" style="margin-bottom:10px;">
+        <p:messages id="messages" />
+        <h:panelGrid columns="3" cellpadding="6">
+        	
+            <p:outputLabel for="username" value="Nombre de usuario:" />
+            <p:inputText id="username" value="#{userView.username}" 
+                required="true" label="username" style="width:233px"
+                requiredMessage="El nombre de usuario es requerido">
+                <f:validateLength minimum="8" />
+            </p:inputText>
+            <p:message for="username" />
+ 
+            <p:outputLabel for="pwd" value="Clave de acceso:" />
+            <p:inputText id="pwd" value="#{userView.password}" required="true" label="password" style="width:233px">
+            	<f:validateLength minimum="8" />
+            </p:inputText>
+            <p:message for="pwd" />
+            
+            <p:outputLabel for="nombre" value="Nombre completo:" />
+            <p:inputText id="nombre" value="#{userView.nombre}" required="true" label="nombre" style="width:233px">
+            	<f:validateLength maximum="30" />
+            </p:inputText>
+            <p:message for="nombre" />
+            
+            <p:outputLabel for="paterno" value="Apellido paterno:" />
+            <p:inputText id="paterno" value="#{userView.paterno}" required="true" label="paterno" style="width:233px">
+            	<f:validateLength maximum="30" />
+            </p:inputText>
+            <p:message for="paterno" />
+            
+            <p:outputLabel for="materno" value="Apellido materno:" />
+            <p:inputText id="materno" value="#{userView.materno}" required="true" label="materno" style="width:233px">
+            	<f:validateLength maximum="30" />
+            </p:inputText>
+            <p:message for="materno" />
+            
+            <p:outputLabel for="email" value="Email:" />           
+            <p:inputText id="email" required="true" label="email" size="40"
+				requiredMessage="Ingrese una dirección de correo válida"
+				validatorMessage="Formato inválido de correo"
+				value="#{userView.email}"
+				 style="width:233px">
+		
+			  <f:validateRegex
+				pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		
+			</p:inputText>
+			
+			<p:message for="email" />
+            
+            <p:outputLabel for="roles" value="Rol de usuario:" />
+	        <p:selectOneMenu id="roles" value="#{userView.rol}" required="true" style="width:140px">
+	            <f:selectItem itemLabel="Seleccione..." itemValue="" />
+	            <f:selectItem itemLabel="Programador" itemValue="Programador" />
+	            <f:selectItem itemLabel="Arquitecto de soluciones" itemValue="Arquitecto de soluciones" />
+	            <f:selectItem itemLabel="Tester" itemValue="Tester" />
+	        </p:selectOneMenu>
+        	<p:message for="roles" />
+        	
+        	
+        	<p:outputLabel for="fileup" value="Foto:" />
+            <p:fileUpload id="fileup" fileUploadListener="#{userView.handler}" mode="advanced" 
+						  dragDropSupport="true"
+						  invalidFileMessage="#{userView.kr}"
+						  invalidSizeMessage="#{userView.mr}"
+                  		  label="#{userView.qr}" uploadLabel="#{userView.pr}" cancelLabel="#{userView.ar}" 
+                  	 	  multiple="false" update="growl" sizeLimit="2000000" 
+                  	 	  fileLimit="1" 
+                  	 	  auto="false"
+                  	 	  allowTypes="/(\.|\/)(jpe?g|png)$/" />
+        </h:panelGrid>
+    </p:panel>
+ 
+    <p:toolbar>
+        <f:facet name="left">
+            <p:commandButton value="Submit" update="panel" actionListener="#{userView.save}" style="margin-right:20px;" />
+        </f:facet>
+ 
+        <f:facet name="right">
+            <p:commandButton value="Reset" update="panel" process="@this" actionListener="#{userView.resetFail}"  />
+ 			<p:commandButton value="Regresar" update="panel" process="@this" actionListener="#{userView.regresar}" />
+ 
+ 			<ui:fragment rendered="#{userView.config}">
+           	<p:commandButton id="config" value="Conf" type="button" />
+		    <p:overlayPanel id="confPanel" for="config" hideEffect="fade" dynamic="true" style="width:600px">
+		        <p:commandButton value="Crear BD" update="panel" process="@this" actionListener="#{userView.crearBD}" />
+ 				<p:commandButton value="Borrar BD" update="panel" process="@this" actionListener="#{userView.borrarBD}" />
+ 
+		    </p:overlayPanel>
+		    </ui:fragment>
+        </f:facet>
+        
+        
+    </p:toolbar>
+</h:form>
+</h:body>
+</f:view>

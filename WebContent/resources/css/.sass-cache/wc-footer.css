@@ -1,0 +1,121 @@
+/* -------------------------------------------- */
+/* ----------------- Footer desktop -------------------- */
+/* -------------------------------------------- */
+@media (min-width: 768px) {
+  .wc-top-border-footer {
+    border-top: 4px solid #425aa0;
+    margin-top: 50px;
+    margin-bottom: 20px; }
+
+  .wc-social-footer {
+    width: 40px;
+    margin-right: 10px; }
+
+  .wc-footer-down {
+    font-family: "ITCFranklinGothicCondensedBook";
+    color: #79838d;
+    font-size: 14px; }
+
+  .wc-footer-title {
+    font-size: 18px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #0f2e86; }
+
+  .wc-footer-links {
+    font-size: 15px;
+    font-family: "ITCFranklinGothicCondensedBook";
+    color: #0f2e86;
+    padding-left: 7px;
+    background: url("../img/arrow_blue.png") no-repeat;
+    background-size: auto 40%;
+    background-position: 0% 45%;
+    margin-bottom: 0px; }
+
+  .wc-footer-links1 {
+    font-size: 15px;
+    font-family: "ITCFranklinGothicCondensedBook";
+    color: #0f2e86;
+    padding-left: 7px;
+    background: url("../img/arrow_blue.png") no-repeat;
+    background-size: auto 8px;
+    background-position: 0% 36%;
+    margin-bottom: 0px; } }
+.wc-footer-top {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.wc-logo-footer {
+  width: 60px; }
+
+.wc-bg-footer {
+  background-color: #e5e5e5; }
+
+/* -------------------------------------------- */
+/* ----------------- Footer mobile -------------------- */
+/* -------------------------------------------- */
+@media (min-width: 200px) and (max-width: 768px) {
+  .wc-social-footer {
+    width: 40px; }
+
+  .wc-social-pad-bottom {
+    padding-bottom: 20px; }
+
+  .wc-footer-down {
+    font-family: "ITCFranklinGothicCondensedBook";
+    color: #79838d;
+    font-size: 12px; }
+
+  .wc-footer-title {
+    font-size: 18px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #0f2e86;
+    margin: 0px; }
+
+  .wc-footer-links {
+    font-size: 16px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #0f2e86;
+    padding-left: 7px;
+    background: url("../img/arrow_blue.png") no-repeat;
+    background-size: auto 40%;
+    background-position: 0% 45%;
+    margin-bottom: 0px; }
+
+  .wc-footer-links1 {
+    font-size: 16px;
+    font-family: "ITCFranklinGothicCondensedBook";
+    color: #0f2e86;
+    padding-left: 7px;
+    background: url("../img/arrow_blue.png") no-repeat;
+    background-size: auto 8px;
+    background-position: 0% 36%;
+    margin-bottom: 0px; }
+
+  .wc-bg-footer-link {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #0f2e86;
+    color: #fff; }
+
+  .wc-footer-title-link {
+    font-size: 18px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #fff;
+    margin: 0px; }
+
+  .wc-pad-10 {
+    padding-bottom: 10px; }
+
+  .wc-border-link {
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: #8d98bd; }
+
+  .wc-footer-height {
+    height: 22px;
+    padding-top: 4px; }
+
+  .wc-width-puce-link {
+    width: 10px;
+    padding-top: 5px; } }
+

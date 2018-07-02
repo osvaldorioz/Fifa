@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<style type="text/css">
+	        .colPanGrid {
+				text-align: left;
+			}
+			
+	   	</style>
+	   	
+	   
+	</h:head>
+<h:body >
+	<h:outputStylesheet library="css" name="grid.css"  />
+<h:form >
+
+	<div id="particles-js" style="position: relative;">
+		<div>
+			<span >
+				<p:graphicImage style="width:23em; height:4.6em;" name="images/logo_uc.png" />
+				
+			</span>
+			<h:outputText value="Ejercicio 4.3" styleClass="ui-priority-primary" 
+				style="position: absolute;
+				       top: 0.2em;
+				   	   right: 0em;
+				       color: #1E376D;
+				       font-family: calibri;
+				       font-size: 28px;"/>
+	    	<h:outputText value="#{loginView.cveProject}" styleClass="ui-priority-primary" 
+				style="position: absolute;
+				       top: 3em;
+				   	   right: 0em;
+				       color: #1E376D;
+				       font-family: calibri;
+				       font-size: 18px;"/>
+			<p:separator />
+		</div>
+		<div id="mi-form" 
+		     style="position:absolute; 
+		            left:9.7em; 
+		            top:14em;">
+    		<p:growl id="growl" showDetail="false" life="10000"/>
+    		
+    		<h:panelGrid id="panelLgn" columns="1" 
+    					 cellpadding="2" style="margin: 0px auto;" 
+    					 columnClasses="colPanGrid" 
+    					 styleClass="ui-panel-titlebar ui-widget-header ui-helper-clearfix ui-corner-all">
+    	
+    			
+	    		<h:outputLabel id="usuarioLbl" for="usuarioTxt" value="Usuario:" 
+	      			   style="font-style: normal;
+							  font-family: arial;
+							  font-size: 0.91em;
+							  color: #1E376D;" />
+				
+			    <p:inputText id="usuarioTxt" value="#{loginView.usuario}" required="false" 
+			    			 styleClass="ui-icon-pencil" 
+			    			 style="#{loginView.failUser};
+			                        width:15.8em;" 
+			    		     onkeypress="if (event.keyCode == 13) { return false; }"/>
+				   
+				
+				<h:outputLabel id="passwordLbl" for="pwdTxt" value="Password:"
+				    		   style="font-style: normal;
+									  font-family: arial;
+									  font-size: 0.91em;
+									  color: #1E376D;"/>
+        		
+			    <p:password id="pwdTxt" value="#{loginView.pwd}" feedback="true"
+			                promptLabel="Escriba su password" weakLabel="Es Débil"
+			                goodLabel="Es Aceptable" strongLabel="Es Difícil" 
+			                style="#{loginView.failPwd};
+			                       width:15.8em; "/>     	
+			                    
+			   <span>
+        		<p:commandButton value="Entrar" id="buttonEnter" update="growl panelLgn"
+        		    icon="ui-icon-home"
+			        actionListener="#{loginView.buttonAction2}" styleClass="ui-priority-primary" 
+			       />
+						   
+			    <p:commandButton value="Registro" id="buttonReg" update="growl panelLgn"
+        		    icon="ui-icon-person"
+			        action="#{loginView.buttonAction3}" styleClass="ui-priority-primary" 
+			       />
+			  </span>
+    		</h:panelGrid>
+    	</div>
+    	<h:outputLabel id="usuarioLb33" for="usuarioTxt" value="#{loginView.footer}" 
+	      			   styleClass="widget-grid-twelve"  />
+	    <h:outputText id="usuarioLb34" value="#{loginView.version}"
+	       styleClass="widget-grid-fourteen"	  />
+    </div>
+    
+    <h:outputScript library="js" name="particles.js" />
+    <script>
+    	<h:outputText value="#{loginView.json_charge}" escape="false"/>
+    	
+    	
+        function ipConfig(){   
+			var batString = 'cd c:\\temp \n ipconfig ' + '>' +' curripconfig.txt';
+         
+   			 var _file = new File('~/tmp.bat');     
+        	_file.open( 'w' );      
+        	_file.encoding = 'UTF-8';      
+		    _file.writeln ( batString );      
+		    _file.close();      
+		    _file.execute();     
+       
+   			var  resFile = File('c:\\temp\\curripconfig.txt' );
+    		while(!resFile.exists){   
+            	$.sleep(5);   
+        	}       
+       
+        	resFile.open( 'r' );      
+   			var toRead =   resFile.read();   
+     		resFile.close();   
+    		//resFile.remove();   
+    		//_file.remove();   
+  
+     		return toRead;   
+    	}		
+    </script>
+    
+</h:form>
+</h:body>
+</f:view>

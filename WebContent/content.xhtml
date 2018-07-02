@@ -1,0 +1,469 @@
+<?xml version="1.0"?>
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<style type="text/css">
+	        .colPanGrid {
+				text-align: left;
+			}
+			svg {
+		  font: 10px sans-serif;
+		}
+		.background path {
+		  fill: none;
+		  stroke: #ddd;
+		  shape-rendering: crispEdges;
+		}
+		.foreground path {
+		  fill: none;
+		  stroke: steelblue;
+		}
+		.brush .extent {
+		  fill-opacity: .3;
+		  stroke: #fff;
+		  shape-rendering: crispEdges;
+		}
+		.axis line,
+		.axis path {
+		  fill: none;
+		  stroke: #000;
+		  shape-rendering: crispEdges;
+		}
+		.axis text {
+		  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+		}
+		div.ex1 {
+			width:352px;
+			height:259px;
+			margin: auto;
+			border: 3px solid #73AD21;
+			display:none;
+		}
+		div.ex2 {
+			width:352px;
+			height:259px;
+			margin: auto;
+			border: 3px solid #73AD21;
+		}
+		
+		div.ex1_a {			
+			margin: auto;
+			border: 3px solid #73AD21;
+			display:none;
+		}
+		div.ex2_a {			
+			margin: auto;
+			border: 3px solid #73AD21;
+		}
+		
+		div.ex1_b {			
+			margin: auto;
+			border: 3px solid #73AD21;
+			display:none;
+		}
+		div.ex2_b {			
+			margin: auto;
+			border: 3px solid #73AD21;
+		}
+		
+		div.ex1_c {			
+			margin: auto;
+			border: 3px solid #73AD21;
+			display:none;
+		}
+		div.ex2_c {			
+			margin: auto;
+			border: 3px solid #73AD21;
+		}
+		
+		div.ex3 {
+			position: relative;
+			left: -35%;
+			top: 5em;
+		}
+		
+		div.ex4 {
+			position: relative;
+			left: 31%;
+			top: -5.4em;
+		}
+		
+		
+		
+		div.footer_yt {
+			position: relative;
+			top: 6.4em;
+			left: 17%;
+		}
+		div.footer_fb {
+			position: relative;
+			top: 4.9em;
+			left: 36%
+		}
+		div.footer_tw {
+			position: relative;
+			top: 3.5em;
+			left: 43%;
+		}
+		
+		.video-responsive {
+			position: relative;
+			padding-bottom: 56.25%; /* 16/9 ratio */
+			padding-top: 30px; /* IE6 workaround*/
+			height: 0;
+			overflow: hidden;
+		}
+		.video-responsive iframe,
+		.video-responsive object,
+		.video-responsive embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		@media screen and (max-width: 880px) {
+			div.footer_yt {
+			position: relative;
+			top: 6.4em;
+			left: 0%;
+			}
+			div.footer_fb {
+				position: relative;
+				top: 4.9em;
+				left: 36%
+			}
+			div.footer_tw {
+				position: relative;
+				top: 3.5em;
+				left: 55%;
+			}
+			
+		}
+		
+		@media screen and (max-width: 740px) {
+			div.ex3 {
+				position: relative;
+				left: 1%;
+				top: -1em;
+			}
+			
+		}
+		
+		@media screen and (max-width: 850px) {
+			
+			div.ex4 {
+				position: relative;
+				left:1%;
+				top: 1em;
+			}
+		}
+	   	</style>
+	   	<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+		<title>Taller de visualización de datos</title>
+		<meta name="description" content="Responsive Multi-Level Menu: Space-saving drop-down menu with subtle effects" />
+		<meta name="keywords" content="multi-level menu, mobile menu, responsive, space-saving, drop-down menu, css, jquery" />
+		<meta name="Osvaldo Ríos" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"/> 
+		<link rel="stylesheet" type="text/css" href="https://tympanus.net/Development/ResponsiveMultiLevelMenu/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="https://tympanus.net/Development/ResponsiveMultiLevelMenu/css/component.css" />
+		
+		<script src="https://tympanus.net/Development/ResponsiveMultiLevelMenu/js/modernizr.custom.js"></script>
+	
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<!--script src="//d3js.org/d3.v4.min.js"></script-->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-7243260-2']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+	   
+	</h:head>
+<h:body >
+	<h:outputStylesheet library="css" name="grid.css"  />
+<h:form id="frmFifa">
+
+	<div class="container demo-3">	
+			
+			<header class="clearfix">
+			    <div id="logo" class="ex3">
+			        <p:graphicImage style="width:162; height:52;" name="images/logo_uc.png" />					
+				</div>
+				<h1>Ejercicio 4.3 
+					
+					<span style="position:  relative;top: 1em;">Osvaldo Ríos Zambrano</span>
+				</h1>	
+				
+				<div class="ex4">
+					<h:outputLabel id="nameLbl" 
+					value="#{contentView.user.nombre} #{contentView.user.paterno} #{contentView.user.materno}"
+				    		   style="font-style: normal;
+									  font-family: arial;
+									  font-size: 1.2em;"/>
+					<p>
+					<h:outputLabel id="rolLbl" 
+					value="#{contentView.user.rol}"
+				    		   />
+					</p>
+					
+					<p:graphicImage value="/getImage?idImage=#{contentView.user.idUser}" style="width:22px;width:22px" />
+				</div>
+				
+			</header>
+			<div class="main clearfix">
+				<div id="contentMessage" class="column">
+					<p>#{contentView.message}</p>
+				</div>
+				<div class="column">
+					<div id="dl-menu" class="dl-menuwrapper">
+						<button class="dl-trigger">Open Menu</button>
+						<ul class="dl-menu">
+							<li>
+								<a href="#">Grupos</a>
+								<ul class="dl-submenu">
+								    
+									<li>
+										<a href="#">A-D</a>
+										<ul class="dl-submenu">
+											<li><h:commandLink actionListener="#{contentView.grupoa}" value="Grupo A" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											<li><h:commandLink actionListener="#{contentView.grupob}" value="Grupo B" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											<li><h:commandLink actionListener="#{contentView.grupoc}" value="Grupo C" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											<li><h:commandLink actionListener="#{contentView.grupod}" value="Grupo D" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+										</ul>
+									</li>
+									
+									<li>
+										<a href="#">E-H</a>
+										<ul class="dl-submenu">
+											<li><h:commandLink actionListener="#{contentView.grupoe}" value="Grupo E" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											<li><h:commandLink actionListener="#{contentView.grupof}" value="Grupo F" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											<li><h:commandLink actionListener="#{contentView.grupog}" value="Grupo G" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											<li><h:commandLink actionListener="#{contentView.grupoh}" value="Grupo H" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">Clasificación general</a>
+								<ul class="dl-submenu">
+								    <li>
+										<a href="#">Consensos</a>
+										<ul class="dl-submenu">
+											<li><h:commandLink actionListener="#{contentView.histo}" value="Histograma" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											
+										</ul>
+									</li>								
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">Probabilidades ganadoras</a>
+								<ul class="dl-submenu">
+								    <li>
+										<a href="#">Modelo Bradley-Terry</a>
+										<ul class="dl-submenu">
+											<li><h:commandLink actionListener="#{contentView.pairs}" value="Comparación por pares" update="frmFifa:panelLgn frmFifa:contentMessage"/></li>
+											
+										</ul>
+									</li>								
+								</ul>
+							</li>
+							
+							<li>
+								<a href="#">Salir</a>
+								<ul class="dl-submenu">
+									<li>
+										<h:commandLink action="#{contentView.close}" value="Cerrar sesión"/>
+									</li>									
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<p:panel id="panelLgn">
+			
+				<ui:fragment rendered="#{contentView.pp}">
+					<div class="video-responsive">
+								<iframe  src="crossing.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	
+			
+				<ui:fragment rendered="#{contentView.hh}">
+					<div class="video-responsive">
+								<iframe  src="histograma.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	
+				
+				<ui:fragment rendered="#{contentView.ga}">
+					<div class="video-responsive">
+								<iframe  src="grupoa.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	
+			    <ui:fragment rendered="#{contentView.gb}">
+					<div class="video-responsive">
+								<iframe  src="grupob.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	       
+				
+				<ui:fragment rendered="#{contentView.gc}">
+					<div class="video-responsive">
+								<iframe  src="grupoc.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	       
+				
+				<ui:fragment rendered="#{contentView.gd}">
+					<div class="video-responsive">
+								<iframe  src="grupod.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	         
+				
+				<ui:fragment rendered="#{contentView.grpe}">
+					<div class="video-responsive">
+								<iframe  src="grupoe.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	             
+				
+				<ui:fragment rendered="#{contentView.gf}">
+					<div class="video-responsive">
+								<iframe  src="grupof.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	        
+				
+				<ui:fragment rendered="#{contentView.gg}">
+					<div class="video-responsive">
+								<iframe  src="grupog.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	     
+				
+				<ui:fragment rendered="#{contentView.gh}">
+					<div class="video-responsive">
+								<iframe  src="grupoh.html" frameborder="0" 
+								allowfullscreen="allowfullscreen"></iframe>
+					</div>	
+				</ui:fragment>	    
+				   
+				<ui:fragment rendered="#{contentView.user.rol eq 'Arquitecto de soluiones'}">
+			
+					<div id="users" class="ex2_c">
+					
+						<p:dataTable id="userlist" var="usr" value="#{contentView.users}" rows="10"
+					                         paginator="true"
+					                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					                         currentPageReportTemplate=" {currentPage} de {totalPages}"
+					                         rowsPerPageTemplate="5,10,15">
+							
+							<p:column headerText="ID" sortBy="#{usr.idUser}">
+						        <h:outputText value="#{usr.idUser}" />
+						    </p:column>
+							<p:column headerText="Username" sortBy="#{usr.username}">
+						        <h:outputText value="#{usr.username}" />
+						    </p:column>	    
+						    <p:column headerText="Nombre" sortBy="#{usr.nombre}">
+						        <h:outputText value="#{usr.nombre}" />
+						    </p:column>
+						    <p:column headerText="Paterno" sortBy="#{usr.paterno}">
+						        <h:outputText value="#{usr.paterno}" />
+						    </p:column>
+						    <p:column headerText="Materno" sortBy="#{usr.materno}">
+						        <h:outputText value="#{usr.materno}" />
+						    </p:column>
+						    <p:column headerText="Rol" sortBy="#{usr.rol}">
+						        <h:outputText value="#{usr.rol}" />
+						    </p:column>
+						    <p:column headerText="Email" sortBy="#{usr.email}">
+						        <h:outputText value="#{usr.email}" />
+						    </p:column>
+						    <p:column headerText="Foto" >
+						        <p:graphicImage value="/getImage?idImage=#{usr.idUser}" style="width:22px;width:22px" />
+						    </p:column>
+						    
+						</p:dataTable>
+					</div>
+					
+				</ui:fragment>
+				
+			</p:panel>                                                   
+			
+			
+			<p></p>
+			
+			
+			
+			<footer class="clearfix">
+				<div class="footer_yt">
+				<img src="/Fifa/images/youtube.jpg"
+				width="62" height="58" style = "position: relative;
+												top: 0em;
+							                    left: 14%"/>
+				<a href="https://www.youtube.com/user/redcuauhtemoc" 
+				   style = "position: relative;
+						    top: -1.4em;
+							left: 12%" >Youtube</a>						
+				</div>
+				
+				<div class="footer_fb">
+				<img src="/Fifa/images/facebook.jpg"
+				width="22" height="22" style = "position: relative;
+												top: -1.4em;
+							                    left: 8.5%"/>
+				<a href="https://www.facebook.com/UNIVERSIDADCUAUHTEMOCAGS/"
+				   style="position: relative;
+						  top: -1.4em;
+						  left: 9%;">Facebook</a>				
+				</div>
+				
+				<div class="footer_tw">
+				<img src="/Fifa/images/twitter.jpg"
+				width="22" height="18" style = "position: relative;
+												top: -1.4em;
+							                    left: 14%"/>
+				<a href="https://twitter.com/ucuauhtemocags" 
+				   style="position: relative;
+						  top: -1.4em;
+						  left: 14%;">Twitter</a>								
+				</div>
+				
+			</footer>
+			
+		</div><!-- /container -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://tympanus.net/Development/ResponsiveMultiLevelMenu/js/jquery.dlmenu.js"></script>
+		
+		<script>
+			$(function() {
+				$( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' }
+				});
+			});
+			
+		</script>
+    
+</h:form>
+</h:body>
+</f:view>

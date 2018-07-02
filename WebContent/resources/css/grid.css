@@ -1,0 +1,182 @@
+.ui-button{
+  	color: #1E376D;
+  	background: #F8A81B;
+}
+
+.ui-column-title{
+	color: #1E376D;
+}
+
+.ui-datatable tbody td {
+    border-color: inherit;
+    font-size: smaller !important;
+}
+
+.widget-grid-one {
+  width: 125px;
+  margin-top: 0em; 
+  margin-bottom: 0em;
+  margin-left: -7em;
+}
+
+.widget-grid-two {
+  width: 125px;
+  margin-top: 0em; 
+  margin-bottom: 0em;
+  margin-left: 0em;
+}
+
+.widget-grid-three {
+  width: 11em;
+  margin-top: 0em; 
+  margin-bottom: 0.5em;
+  margin-left: 1.84em;
+}
+
+.widget-grid-three-one {
+  width: 11em;
+  margin-top: 0em; 
+  margin-bottom: 0.5em;
+  margin-left: 5.46em;
+}
+
+.widget-grid-three-two {
+  width: 11em;
+  margin-top: 0em; 
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+}
+
+.widget-grid-four {
+  width: 144px;
+  margin-top: 0em; 
+  margin-bottom: 0em;
+  margin-left: 1.82em;
+}
+
+.widget-grid-five {
+  width: 11em;
+  margin-top: 0em; 
+  margin-bottom: 0.5em;
+  margin-left: 1.62em;
+}
+
+.widget-grid-five-one {
+	position: sticky; 
+	left: 20.2em;
+	font-size: 83%;
+}
+
+.widget-grid-six {
+  color: rgb(255, 255, 255); 
+  position: absolute;	
+  left: 45em;
+  top: 9.9em;
+  width: 35px;
+  height: 13px;
+}
+
+.widget-grid-six-one {
+	position: sticky; 
+	left: 30.8em;  	                     
+	font-size: 83%;
+}
+ 
+.widget-grid-seven {
+  color: rgb(255, 255, 255); 
+  position: absolute;	
+  left: 45em;
+  top: 11.5em;
+  width: 35px;
+  height: 13px;
+}
+
+.widget-grid-eight {
+  width: 60px;
+  position: absolute;				 					   
+  margin-bottom: 1em;
+  margin-top: 1em;
+  margin-left: 1em;
+  width: 12em;
+}
+
+.widget-grid-nine {
+  width: 125px;
+  margin-top: 1em; 
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.widget-grid-nine-one {
+  width: 125px;
+  margin-top: 0em; 
+  margin-bottom: 0em;
+  margin-left: -7em;
+}
+
+.widget-grid-ten {
+  width: 60px;
+  margin-top: 1em; 
+  margin-bottom: 1em;
+  margin-left: 1em;
+  width:7em;
+}
+
+.widget-grid-eleven {
+  width: 125px;
+  margin-top: 1em; 
+  margin-bottom: 1em;
+}
+
+.widget-grid-twelve {
+  font-style: normal;
+  font-family: arial;
+  font-size: 0.66em;
+  position: fixed;
+  top: 95.5%;
+  left: 42%;
+  color: #1E376D;
+}
+
+.widget-grid-thirteen {
+	position:absolute;
+	left: 8.6em;
+	font-size: 83%;
+}
+
+.widget-grid-thirteen-one {
+	position: absolute; 
+	left: 21.5em;
+	font-size: 83%;
+}
+
+.widget-grid-fourteen {
+	position: fixed;
+	left: 47%;
+	top: 97.5%;
+	color: #1E376D;
+	font-family: arial;
+    font-size: .5em;
+}
+
+.ie-top-user{
+	position: fixed;       	             		
+    right: 13.5em;
+	top: 9.6em;
+	font-family: arial;
+    font-size: 0.9em;
+}
+
+.ie-top-perf{
+	position: fixed;       	             		
+    right: 13.5em;
+	top: 11em;
+	font-family: arial;
+    font-size: 0.9em;
+}
+
+.ie-top-btn-exit{
+	position: fixed;       	             		
+    right: 3.1em;
+	top: 8.7em;
+}

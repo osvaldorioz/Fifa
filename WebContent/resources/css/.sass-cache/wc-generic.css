@@ -1,0 +1,94 @@
+.wc-display-none {
+  display: none; }
+
+/* -------------------------------------------- */
+/* ----------------- General desktop -------------------- */
+/* -------------------------------------------- */
+@media (min-width: 768px) {
+  .wc-npad-left-min {
+    padding-left: 0px; }
+
+  .wc-npad-right-min {
+    padding-right: 0px; }
+
+  .wc-no-pad-min {
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .wc-color-blue1 {
+    font-weight: bold;
+    font-size: 17px;
+    color: #0e2e86; }
+
+  .wc-divider {
+    border-bottom: 1px dotted #0e2e86;
+    padding-top: 10px;
+    margin-bottom: 35px; }
+
+  .wc-pull-right-desktop1 {
+    float: right !important; }
+
+  .wc-gray-ligth {
+    font-family: "ITCFranklinGothicCondensedBook";
+    color: #79838d;
+    font-size: 14px; }
+
+  .wc-link-light {
+    font-family: "ITCFranklinGothicCondensedBook";
+    color: #1762a5;
+    text-decoration: underline; }
+
+  .wc-n-margin-p-desktop {
+    margin: 0 0; }
+
+  .wc-pad-bottom-50 {
+    padding-bottom: 50px; } }
+@media (min-width: 992px) {
+  .wc-pull-right-desktop {
+    float: right !important; } }
+/* -------------------------------------------- */
+/* ----------------- general mobile -------------------- */
+/* -------------------------------------------- */
+@media (min-width: 200px) and (max-width: 767px) {
+  .wc-npad-left-320 {
+    padding-left: 0px; }
+
+  .wc-npad-right-320 {
+    padding-right: 0px; }
+
+  .wc-no-pad-320 {
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .wc-color-blue1 {
+    font-weight: bold;
+    font-size: 17px;
+    color: #0e2e86; }
+
+  .wc-divider {
+    border-bottom: 2px solid #e5e5e5;
+    margin-bottom: 15px; }
+
+  .wc-divider1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5; }
+
+  .wc-center-320 {
+    text-align: center; }
+
+  .wc-pull-right-320 {
+    float: right !important; }
+
+  .wc-pad-bottom-50 {
+    padding-bottom: 50px; }
+
+  .wc-link-light {
+    font-family: "ITCFranklinGothicCondensedBook";
+    font-size: 14px;
+    color: #1762a5;
+    text-decoration: underline; }
+
+  .wc-n-margin-p-320 {
+    margin: 0 0; } }
+

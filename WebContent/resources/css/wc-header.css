@@ -1,0 +1,77 @@
+/* -------------------------------------------- */
+/* ----------------- header generic -------------------- */
+/* -------------------------------------------- */
+.wc-home {
+  color: #3B3B3B; }
+
+.wc-padding-header {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.wc-style-bottom-header {
+  border-bottom-color: #0e2e86;
+  border-bottom-style: solid;
+  border-width: 5px;
+  padding-top: 75px; }
+
+.wc-arrow-home {
+  margin-right: 2px;
+  width: 4px; }
+
+.wc-inline {
+  display: inline-block; }
+
+.wc-font-size-line {
+  font-size: 20px; }
+
+.wc-social-header {
+  width: 22px;
+  margin-top: 4px;
+  margin-left: 4px; }
+
+.wc-long-font {
+  font-size: 20px;
+  color: #0e2e86;
+  font-family: "ITCFranklinGothicCondensedDemi"; }
+
+/* -------------------------------------------- */
+/* ----------------- header desktop -------------------- */
+/* -------------------------------------------- */
+@media (min-width: 767px) {
+  .wc-step {
+    padding-top: 40px;
+    padding-bottom: 40px; }
+
+  .wc-step-active {
+    font-size: 18px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #1762a5; }
+
+  .wc-step-inactive {
+    font-size: 18px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #79838d; } }
+/* -------------------------------------------- */
+/* ----------------- header desktop -------------------- */
+/* -------------------------------------------- */
+@media (min-width: 200px) and (max-width: 767px) {
+  .wc-logo-320 {
+    width: 188px; }
+
+  .wc-header-phone {
+    width: 38px; }
+
+  .wc-step {
+    padding-top: 30px;
+    padding-bottom: 10px; }
+
+  .wc-step-active {
+    font-size: 18px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #1762a5; }
+
+  .wc-step-inactive {
+    font-size: 18px;
+    font-family: "Conv_ITCFranklinGothicStd-MdCd";
+    color: #79838d; } }
+
